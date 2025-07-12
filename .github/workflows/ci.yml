@@ -10,6 +10,7 @@ on:
       - dev
       - 'releases/**'
       - 'features/**'
+      - 'bugfixs/**'
 
   pull_request:
   workflow_dispatch:
