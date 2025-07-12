@@ -1,7 +1,5 @@
 esphome:
   name: test
-  platform: ESP8266
-  board: d1_mini
 
 logger:
   level: DEBUG
