@@ -115,7 +115,7 @@ def validate_transition(value):
     if "->" not in value:
         raise cv.Invalid("Transition mapping must contain '->'")
     a, b = value.split("->", 1)
-    a, b = a.strip(), b.strip()
+    a, b = [it.strip() for it in a.split(",")], [it.strip() for it in b.split(",")]
     return validate_transition({CONF_FROM: a, CONF_TO: b})
 
 def output_graph(config):
