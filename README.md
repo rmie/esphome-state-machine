@@ -29,15 +29,26 @@ Example for a simple on/off toggle state machine:
 
 ```yaml
 state_machine:
-  - name: On/Off Toggle State Machine
+  - name: Climat Control State Machine
     states:
+      - "HEAT"
       - "OFF"
-      - "ON"
+      - "COOL"
     inputs:
-      - name: TOGGLE
+      - name: OFF
         transitions:
-          - ON -> OFF
-          - OFF -> ON
+          - COOL,HEAT,OFF -> OFF  # enhancment, list of states in one transition
+      - name: UP
+        transitions:
+          - HEAT ->               # enhancment, readability of identiy       
+          - OFF -> HEAT
+          - COLD -> OFF      
+      - name: DOWN
+        transitions:
+          - HEAT -> OFF
+          - OFF -> COLD
+          - COLD ->      
+
 ```
 
 And to transition between states it you'll need to trigger the machine by providing input, e.g:
