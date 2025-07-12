@@ -1,6 +1,7 @@
 esphome:
   name: test
-
+  platform: esp32
+  
 logger:
   level: DEBUG
 
