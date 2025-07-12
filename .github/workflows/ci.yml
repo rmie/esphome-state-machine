@@ -10,9 +10,9 @@ on:
       - dev
       - 'releases/**'
       - 'features/**'
-
   pull_request:
-
+  workflow_dispatch:
+  
 jobs:
   build:
 
