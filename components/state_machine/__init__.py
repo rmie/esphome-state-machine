@@ -391,6 +391,7 @@ async def to_code(config):
         },
         key=CONF_STATE
     ),
+    synchronous=True,
 )
 def state_machine_set_to_code(config, action_id, template_arg, args):
     var = cg.new_Pvariable(action_id, template_arg, config[CONF_STATE])
@@ -407,6 +408,7 @@ def state_machine_set_to_code(config, action_id, template_arg, args):
         },
         key=CONF_TRANSITION_INPUT_KEY
     ),
+    synchronous=True,
 )
 def state_machine_transition_to_code(config, action_id, template_arg, args):
     var = cg.new_Pvariable(action_id, template_arg, config[CONF_TRANSITION_INPUT_KEY])
